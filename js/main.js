@@ -1,11 +1,14 @@
 
-const liDOM = document.querySelectorAll('li');
+const hamburgerDOM = document.querySelector('.hamburger');
+const navDOM = document.querySelector('nav');
 
-for (let i = 0; i < liDOM.length; i++) {
-    liDOM[i].innerText = 'Pomidoras';
-    liDOM[i].classList.add('pomidoras');
-}
 
+console.log(hamburgerDOM);
+console.log(navDOM);
+
+hamburgerDOM.addEventListener('click', () => {
+    navDOM.classList.toggle('visible');
+})
 
 /*const liDOM = document.querySelectorAll('li');
 liDOM.classList.add('darzove');

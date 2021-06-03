@@ -1,4 +1,21 @@
-.pomidoras {
-  color: red;
+header {
+  display: flex;
+  justify-content: space-between;
+  /*align-items: top;*/
   font-size: 20px;
+}
+.big {
+  font-size: 40px;
+}
+nav {
+  flex-direction: column;
+  display: none;
+  gap: 10px;
+}
+nav.visible {
+  display: flex;
+}
+.hamburger {
+  font-size: 40px;
+  cursor: pointer;
 }
