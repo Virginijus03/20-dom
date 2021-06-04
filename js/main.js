@@ -1,4 +1,4 @@
-
+let rezultatas = 0;
 const minusDOM = document.querySelector('.minus');
 const plusDOM = document.querySelector('.plus');
 const numberDOM = document.querySelector('.number');
@@ -7,16 +7,17 @@ const h1DOM = document.querySelector('h1');
 const h1 = 'Te prasideda žaidynės! 🥳';
 
 minusDOM.addEventListener('click', () => {
-    rezultatas = rezultatas - 1;
-    numberDOM.innerText = rezultatas;
+    numberDOM.innerText = --rezultatas;
     h1DOM.innerText = 'Žaidimas progrese';
 })
 
 plusDOM.addEventListener('click', () => {
+    numberDOM.innerText = ++rezultatas;
     h1DOM.innerText = 'Žaidimas progrese';
 })
 
 resetDOM.addEventListener('click', () => {
+    numberDOM.innerText = 0;
     h1DOM.innerText = h1;
 })
 /*
