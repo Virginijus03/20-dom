@@ -1,4 +1,18 @@
-let rezultatas = 0;
+const buttonDOM = document.querySelector('button');
+const inputDOM = document.querySelector('input');
+const spanDOM = document.querySelector('span');
+
+buttonDOM.addEventListener('click', (event) => {
+    event.preventDefault();
+    spanDOM.innerText = inputDOM.value;
+    inputDOM.value = '';
+})
+
+
+
+
+
+/*let rezultatas = 0;
 const minusDOM = document.querySelector('.minus');
 const plusDOM = document.querySelector('.plus');
 const numberDOM = document.querySelector('.number');
@@ -29,7 +43,7 @@ resetDOM.addEventListener('click', () => {
     h1DOM.innerText = h1;
     ulDOM.innerHTML += `<li> Paspaudei reset ir dabartinis rezultatas yra  ${rezultatas}.</li>`;
 })
-
+*/
 
 
 
