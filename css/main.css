@@ -19,8 +19,14 @@ form {
 }
 input,
 button {
+  padding: 0 20px;
   font-size: 30px;
   line-height: 40px;
+}
+input[type='color'] {
+  width: 200px;
+  height: 45px;
+  padding: 0;
 }
 span {
   padding: 0 20px;
