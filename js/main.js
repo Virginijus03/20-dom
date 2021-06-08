@@ -1,4 +1,38 @@
-const orderDOM = document.querySelector('.order');
+const lentaDOM = document.querySelector('.lenta');
+const rezNamuDOM = lentaDOM.querySelector('[data-komanda="namu"]');
+const rezSveciuDOM = lentaDOM.querySelector('[data-komanda="sveciu"]');
+
+const aiksteleDOM = document.querySelector('.aikstele');
+const aikNamuDOM = aiksteleDOM.querySelector('[data-komanda="namu"]');
+const taskaiNamuDOM = aikNamuDOM.querySelectorAll('button');
+
+const aikSveciuDOM = aiksteleDOM.querySelector('[data-komanda="sveciu"]');
+const taskaiSveciuDOM = aikSveciuDOM.querySelectorAll('button');
+
+let namuTaskai = 0;
+for (let i = 0; i < taskaiNamuDOM.length; i++) {
+    const mygtukas = taskaiNamuDOM[i];
+    mygtukas.addEventListener('click', () => {
+        namuTaskai += i + 1;
+        rezNamuDOM.innerText = namuTaskai;
+    })
+}
+let sveciuTaskai = 0;
+for (let i = 0; i < taskaiSveciuDOM.length; i++) {
+    const mygtukas = taskaiSveciuDOM[i];
+    mygtukas.addEventListener('click', () => {
+        sveciuTaskai += i + 1;
+        rezSveciuDOM.innerText = sveciuTaskai;
+    })
+}
+
+
+
+
+
+
+
+/*const orderDOM = document.querySelector('.order');
 const buttonDOM = document.querySelector('button');
 const customerDOM = document.querySelector('#customer');
 const sriubaDOM = document.querySelector('#sriuba');
@@ -27,25 +61,10 @@ buttonDOM.addEventListener('click', e => {
     let kreipinys = customerDOM.value === '' ? 'nepateikes vardo' : 'vardu ' + customerDOM.value;
 
     orderDOM.innerText = `Klientas ${kreipinys} ${checkedItems(sriubaDOM)} sriubos,
-    ${checkedItems(patiekalasDOM)} pagrindinio patiekalo, 
+    ${checkedItems(patiekalasDOM)} pagrindinio patiekalo,
     ${checkedItems(desertasDOM)} deserto,
     ${drink}.`;
-})
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+})*/
 
 
 /*const buttonDOM = document.querySelector('button');
