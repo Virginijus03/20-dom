@@ -1,4 +1,14 @@
-const lentaDOM = document.querySelector('.lenta');
+
+
+
+
+
+
+
+
+
+
+/*const lentaDOM = document.querySelector('.lenta');
 const rezNamuDOM = lentaDOM.querySelector('[data-komanda="namu"]');
 const rezSveciuDOM = lentaDOM.querySelector('[data-komanda="sveciu"]');
 
@@ -24,7 +34,7 @@ for (let i = 0; i < taskaiSveciuDOM.length; i++) {
         sveciuTaskai += i + 1;
         rezSveciuDOM.innerText = sveciuTaskai;
     })
-}
+}*/
 
 
 
