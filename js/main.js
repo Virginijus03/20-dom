@@ -1,4 +1,54 @@
+const orderDOM = document.querySelector('.order');
 const buttonDOM = document.querySelector('button');
+const customerDOM = document.querySelector('#customer');
+const sriubaDOM = document.querySelector('#sriuba');
+const patiekalasDOM = document.querySelector('#patiekalas');
+const desertasDOM = document.querySelector('#desertas');
+const gerimaiDOM = document.querySelectorAll('input[name="gerimas"]');
+
+function checkedItems(item) {
+    return item.checked ? "nori" : "nenori";
+}
+
+function kurisPazymetas(DOMlist) {
+    for (const itemDOM of DOMlist) {
+        if (itemDOM.checked) {
+            return itemDOM.value;
+        }
+    }
+}
+
+buttonDOM.addEventListener('click', e => {
+    e.preventDefault();
+
+    const pasirinktasGerimas = kurisPazymetas(gerimaiDOM);
+
+    const drink = pasirinktasGerimas ? pasirinktasGerimas + ' yra pasirinktas gerimas' : 'gerimo nepasirinko';
+    let kreipinys = customerDOM.value === '' ? 'nepateikes vardo' : 'vardu ' + customerDOM.value;
+
+    orderDOM.innerText = `Klientas ${kreipinys} ${checkedItems(sriubaDOM)} sriubos,
+    ${checkedItems(patiekalasDOM)} pagrindinio patiekalo, 
+    ${checkedItems(desertasDOM)} deserto,
+    ${drink}.`;
+})
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const buttonDOM = document.querySelector('button');
 const inputDOM = document.querySelector('input');
 const spanDOM = document.querySelector('span');
 const inputBgColor = document.querySelector('#bg-color');
@@ -12,7 +62,7 @@ buttonDOM.addEventListener('click', (event) => {
     inputDOM.value = '';
     spanDOM.style.backgroundColor = inputBgColor.value;
     spanDOM.style.color = inputTextColor.value;
-})
+})*/
 
 
 
