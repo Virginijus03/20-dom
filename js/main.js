@@ -1,12 +1,64 @@
+function generuotiSocials(selector, icons) {
+
+    if (selector === '' ||
+        typeof selector !== 'string') {
+        console.error('ERROR: teksto nerasta!!!');
+        return false;
+    }
+    if (!Array.isArray(icons) ||
+        icons.length === 0) {
+        console.error('ERROR: teksto nerasta!!!');
+        return false;
+    }
+    const iconsDOM = document.querySelector(selector);
+    if (!iconsDOM) {
+        console.error('ERROR: teksto nerasta!!!');
+        return false;
+    }
+
+    let HTML = '';
+    for (let i = 0; i < icons.length; i++) {
+        if (typeof icons[i] === 'string' &&
+            icons[i] !== '') {
+            HTML += `<i class="fa fa-${icons[i]}"></i>`;
+            console.log(icons[i]);
+        }
+    }
+    iconsDOM.innerHTML = HTML;
+}
+
+const icons = ['facebook', 'twitter', 5, [], '', 'linkedin', 'pinterest'];
+generuotiSocials('.socials', icons);
 
 
+/*
+ <!-- <i class="fa fa-facebook"></i> -->
+Priimamas ikonu sarasas turi buti ne tuscias array
 
+Funkcijos uzduotis, pagal duota ikonu sarasa sugeneruoti <i> elementus, kuriuose class atribute
+bus nurodytos atitinkamu fontAwesome ikonu klasiu pavadinimai
 
+Visas sugeneruotas tekstinis HTML turi buti istatytas i nurodyta selector'iaus elementa
+*/
 
+/*function generuotiLenta(selector, count) {
+    const DOM = document.querySelector(selector);
+    if (!DOM) {
+        console.error('ERROR: lentos nerasta!!!');
+        return false;
+    }
+    if (count < 0 ||
+        count % 1 !== 0) {
+        return false;
+    }
+    let HTML = '';
+    for (let i = 1; i <= count; i++) {
+        HTML += `<div>${i}</div>`;
+    }
+    DOM.innerHTML = HTML;
+}
 
-
-
-
+generuotiLenta('.lenta', 4);*/
 
 /*const lentaDOM = document.querySelector('.lenta');
 const rezNamuDOM = lentaDOM.querySelector('[data-komanda="namu"]');
