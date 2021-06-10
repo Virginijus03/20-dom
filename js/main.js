@@ -1,4 +1,46 @@
-function generuotiSocials(selector, icons) {
+function renderNav(selector, menu) {
+    const headerDOM = document.querySelector('header');
+    //const imgDOM = document.querySelector('.logo')
+    let HTML = '';
+    for (let i = 0; i < menu.length; i++) {
+        const menuItems = menu[i];
+        HTML += `<a href="${menuItems.href}">${menuItems.title}</a>`;
+    }
+    //headerDOM.innerHTML += `<nav>${HTML}</nav>`;
+    headerDOM.insertAdjacentHTML('beforeend', `<nav>${HTML}</nav>`);
+}
+
+const menu = [
+    {
+        href: '#',
+        title: 'Home'
+    },
+    {
+        href: '#',
+        title: 'Services'
+    },
+    {
+        href: '#',
+        title: 'About us'
+    },
+    {
+        href: '#',
+        title: 'Contact us'
+    }
+];
+
+renderNav('header', menu);
+
+/*
+Sukurti funkcija pavadinimu renderNav, kuri priima selector'iu ir sarasa informacijos apie meniu nuorodas
+Selector'ius nurodo, kuriame elemente reikes istatyti sugeneruota funkcijos turini
+Priimamas meniu informacijos sarasas turi buti ne tuscias array
+Funkcijos uzduotis, pagal duota meniu informacijos sarasa sugeneruoti <nav> ir <a> elementus
+Visas sugeneruotas tekstinis HTML turi buti istatytas i nurodyta selector'iaus elementa
+Pradinis HTML yra
+*/
+
+/*function generuotiSocials(selector, icons) {
 
     if (selector === '' ||
         typeof selector !== 'string') {
@@ -12,12 +54,12 @@ function generuotiSocials(selector, icons) {
     }
     const iconsDOM = document.querySelector(selector);
     if (!iconsDOM) {
-        console.error('ERROR: teksto nerasta!!!');
+        console.error('ERROR: nerasta DOM!!!');
         return false;
     }
 
     let HTML = '';
-    for (let i = 0; i < icons.length; i++) {
+    for (let i = 0; i < icons.length; i++) {  => //foroffas ciklas for (const icon of iconList){}
         if (typeof icons[i] === 'string' &&
             icons[i] !== '') {
             HTML += `<i class="fa fa-${icons[i]}"></i>`;
@@ -26,9 +68,9 @@ function generuotiSocials(selector, icons) {
     }
     iconsDOM.innerHTML = HTML;
 }
-
 const icons = ['facebook', 'twitter', 5, [], '', 'linkedin', 'pinterest'];
 generuotiSocials('.socials', icons);
+*/
 
 
 /*
@@ -40,6 +82,12 @@ bus nurodytos atitinkamu fontAwesome ikonu klasiu pavadinimai
 
 Visas sugeneruotas tekstinis HTML turi buti istatytas i nurodyta selector'iaus elementa
 */
+
+
+
+
+
+
 
 /*function generuotiLenta(selector, count) {
     const DOM = document.querySelector(selector);
