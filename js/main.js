@@ -1,3 +1,14 @@
+
+
+
+
+
+
+
+
+
+
+
 function animalChoise(selector, gyvunas) {
     const DOM = document.querySelector(selector);
     let HTML = '';
@@ -6,21 +17,24 @@ function animalChoise(selector, gyvunas) {
         HTML += `<option value=${gyvunasItems}>${gyvunasItems}</option>`;
     }
     DOM.insertAdjacentHTML('afterend', `<select>${HTML}</select>`);
-
-    const optionDOM = document.querySelector('.option');
-    const buttonDOM = document.querySelector('button');
-    const selectDOM = document.querySelector('select')
-
-    buttonDOM.addEventListener('click', (e) => {
-        e.preventDefault();
-        optionDOM.innerText = selectDOM.value;
-
-    })
 }
 
 const gyvunas = ["zuikis", "barsukas", "lape", "vilkas", "sernas", "stirna", "vovere"];
-
 animalChoise('label[for="animal"]', gyvunas);
+
+const optionDOM = document.querySelector('.option');
+const buttonDOM = document.querySelector('button');
+const selectDOM = document.querySelector('select')
+
+buttonDOM.addEventListener('click', (e) => {
+    e.preventDefault();
+    optionDOM.innerText = selectDOM.value;
+
+})
+
+
+
+
 
 /*function renderNav(selector, menu) {
     const headerDOM = document.querySelector('header');
