@@ -1,4 +1,28 @@
-function renderNav(selector, menu) {
+function animalChoise(selector, gyvunas) {
+    const DOM = document.querySelector(selector);
+    let HTML = '';
+    for (let i = 0; i < gyvunas.length; i++) {
+        const gyvunasItems = gyvunas[i];
+        HTML += `<option value=${gyvunasItems}>${gyvunasItems}</option>`;
+    }
+    DOM.insertAdjacentHTML('afterend', `<select>${HTML}</select>`);
+
+    const optionDOM = document.querySelector('.option');
+    const buttonDOM = document.querySelector('button');
+    const selectDOM = document.querySelector('select')
+
+    buttonDOM.addEventListener('click', (e) => {
+        e.preventDefault();
+        optionDOM.innerText = selectDOM.value;
+
+    })
+}
+
+const gyvunas = ["zuikis", "barsukas", "lape", "vilkas", "sernas", "stirna", "vovere"];
+
+animalChoise('label[for="animal"]', gyvunas);
+
+/*function renderNav(selector, menu) {
     const headerDOM = document.querySelector('header');
     //const imgDOM = document.querySelector('.logo')
     let HTML = '';
@@ -30,7 +54,7 @@ const menu = [
 ];
 
 renderNav('header', menu);
-
+*/
 /*
 Sukurti funkcija pavadinimu renderNav, kuri priima selector'iu ir sarasa informacijos apie meniu nuorodas
 Selector'ius nurodo, kuriame elemente reikes istatyti sugeneruota funkcijos turini
