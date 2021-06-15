@@ -15,15 +15,24 @@ form {
   flex-direction: column;
   gap: 20px;
 }
-select {
-  padding: 5px 20px;
-  font-size: 30px;
-  line-height: 40px;
-  justify-content: right;
-}
-
+input,
 button {
   padding: 5px 20px;
   font-size: 30px;
   line-height: 40px;
+}
+.board {
+  display: inline-block;
+  width: 400px;
+  height: 400px;
+  padding: 10px;
+  box-shadow: 0 0 10px #2511ff;
+}
+.row {
+  float: left;
+  width: 100%;
+}
+.cell {
+  height: 100%;
+  float: left;
 }

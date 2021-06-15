@@ -1,15 +1,48 @@
+const optionDOM = document.querySelector('.option');
+const inputDOM = document.getElementById('board');
+const buttonDOM = document.querySelector('button');
+const boardDOM = document.querySelector('.board');
+
+buttonDOM.addEventListener('click', (e) => {
+    e.preventDefault();
+    const s = parseInt(inputDOM.value);
+    optionDOM.innerText = s + 'x' + s;
+    generateRow(boardDOM, s);
+});
+
+
+function generateRow(DOMelement, size) {
+    const elementSize = 100 / size;
+    let whiteBlackCellHTML = '';
+    let blackWhiteCellHTML = '';
+    let HTML = '';
+    const whiteCellHTML = `<div class="cell" style="width: ${elementSize}%; background-color: white;"></div>`;
+    const blackCellHTML = `<div class="cell" style="width: ${elementSize}%; background-color: black;"></div>`;
+
+    for (let c = 0; c < size; c++) {
+        if (c % 2 === 0) {
+            whiteBlackCellHTML += whiteCellHTML;
+            blackWhiteCellHTML += blackCellHTML;
+        } else {
+            whiteBlackCellHTML += blackCellHTML;
+            blackWhiteCellHTML += whiteCellHTML;
+        }
+    }
+
+    let cellHTML = '';
+    for (let r = 0; r < size; r++) {
+        cellHTML = r % 2 === 0 ? whiteBlackCellHTML : blackWhiteCellHTML;
+        HTML += `<div class="row" style="height: ${elementSize}%;">${cellHTML}</div>`;
+    }
+
+    DOMelement.innerHTML = HTML;
+}
 
 
 
 
 
-
-
-
-
-
-
-function animalChoise(selector, gyvunas) {
+/*function animalChoise(selector, gyvunas) {
     const DOM = document.querySelector(selector);
     let HTML = '';
     for (let i = 0; i < gyvunas.length; i++) {
@@ -30,11 +63,7 @@ buttonDOM.addEventListener('click', (e) => {
     e.preventDefault();
     optionDOM.innerText = selectDOM.value;
 
-})
-
-
-
-
+})*/
 
 /*function renderNav(selector, menu) {
     const headerDOM = document.querySelector('header');
