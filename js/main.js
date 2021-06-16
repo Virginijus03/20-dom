@@ -1,9 +1,13 @@
 
 
 
-
-
-
+/*
+function tortoGabalas(tortuKiekis, zmoniuKiekis, tortoSvoris) {
+    const gabaliukas = Math.ceil(zmoniuKiekis / tortuKiekis);
+    return Math.floor(tortoSvoris / gabaliukas * 1000);
+}
+console.log(tortoGabalas(3, 17, 1));
+*/
 
 
 /*
