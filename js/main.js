@@ -1,4 +1,35 @@
-const optionDOM = document.querySelector('.option');
+function time(nuo, iki, intervalas) {
+    const pamokuKiekis = Math.floor((iki - nuo) * 60 / intervalas);
+    //console.log(pamokuKiekis + 1);
+
+    for (let h = nuo * 60; h <= iki * 60; h += intervalas) {
+        const m = h % 60;
+        const valandos = (h - m) / 60;
+        // const valandos = Math.floor(h / 60);
+        // const m = h % 60;
+        console.log(`${valandos}:${m < 10 ? '0' + m : m}`);
+
+    }
+}
+time(1, 4, 31);
+time(9, 15, 45);
+//time(22, 01, 45);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*const optionDOM = document.querySelector('.option');
 const inputDOM = document.getElementById('board');
 const buttonDOM = document.querySelector('button');
 const boardDOM = document.querySelector('.board');
@@ -36,7 +67,7 @@ function generateRow(DOMelement, size) {
     }
 
     DOMelement.innerHTML = HTML;
-}
+}*/
 
 
 
