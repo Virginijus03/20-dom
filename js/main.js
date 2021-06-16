@@ -1,33 +1,34 @@
-function time(nuo, iki, intervalas) {
-    const pamokuKiekis = Math.floor((iki - nuo) * 60 / intervalas);
-    //console.log(pamokuKiekis + 1);
 
-    for (let h = nuo * 60; h <= iki * 60; h += intervalas) {
-        const m = h % 60;
-        const valandos = (h - m) / 60;
-        // const valandos = Math.floor(h / 60);
-        // const m = h % 60;
-        console.log(`${valandos}:${m < 10 ? '0' + m : m}`);
 
+
+
+
+
+
+
+/*
+function time(nuo, iki, trukme) {
+    let pakeistasIki = iki
+    if (nuo > iki) {
+        pakeistasIki = 24 + iki;
+    }
+    for (let i = nuo * 60; i <= pakeistasIki * 60; i += trukme) {
+        const h = Math.floor(i / 60);
+        const m = i - h * 60;
+        const hMod = h % 24
+        console.log(`${hMod < 10 ? '0' + hMod : hMod}:${m < 10 ? '0' + m : m}`);
     }
 }
-time(1, 4, 31);
-time(9, 15, 45);
-//time(22, 01, 45);
 
+time(22, 3, 45);
+*/
 
-
-
-
-
-
-
-
-
-
-
-
-
+/*
+function tortogGabalas(tortuKiekis, zmoniuKiekis, tortoSvoris) {
+    const gabaliukas = Math.floor((tortuKiekis * tortoSvoris * 1000) / zmoniuKiekis);
+    console.log(gabaliukas);
+}
+tortogGabalas(3, 17, 1);*/
 
 /*const optionDOM = document.querySelector('.option');
 const inputDOM = document.getElementById('board');
@@ -130,7 +131,7 @@ const menu = [
 renderNav('header', menu);
 */
 /*
-Sukurti funkcija pavadinimu renderNav, kuri priima selector'iu ir sarasa informacijos apie meniu nuorodas
+Sukurti funkcija pavadinimu renderNav, kuri priima selector'iu ir sarasa informacijos apie meniu tortuKiekisrodas
 Selector'ius nurodo, kuriame elemente reikes istatyti sugeneruota funkcijos turini
 Priimamas meniu informacijos sarasas turi buti ne tuscias array
 Funkcijos uzduotis, pagal duota meniu informacijos sarasa sugeneruoti <nav> ir <a> elementus
